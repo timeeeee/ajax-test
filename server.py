@@ -1,7 +1,10 @@
-from flask import Flask, url_for
+from flask import Flask, redirect
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return redirect("/static/index.html", code=302)
 
 @app.route("/api")
 def text():
-    return "This came from a flask server!"
+    return "Here it is!"
